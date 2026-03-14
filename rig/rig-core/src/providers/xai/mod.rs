@@ -14,6 +14,8 @@ pub mod client;
 pub mod completion;
 #[cfg(feature = "image")]
 pub mod image_generation;
+#[cfg(feature = "audio")]
+pub mod audio_generation;
 mod streaming;
 
 pub use client::Client;
@@ -21,5 +23,7 @@ pub use completion::{
     CompletionModel, CompletionResponse, GROK_2_1212, GROK_2_IMAGE_1212, GROK_2_VISION_1212,
     GROK_3, GROK_3_FAST, GROK_3_MINI, GROK_3_MINI_FAST, GROK_4,
 };
+#[cfg(feature = "audio")]
+pub use audio_generation::{AudioGenerationModel, TTS_1};
 #[cfg(feature = "image")]
 pub use image_generation::{GROK_IMAGINE_IMAGE, GROK_IMAGINE_IMAGE_PRO, ImageGenerationModel};
